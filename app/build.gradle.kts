@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.assignment3"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -34,6 +34,7 @@ android {
 
 dependencies {
         implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
+        implementation("com.google.firebase:firebase-auth")
 
         implementation(libs.appcompat)
         implementation(libs.material)

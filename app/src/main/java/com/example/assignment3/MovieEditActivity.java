@@ -10,22 +10,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
-public class MovieDetailsActivity extends AppCompatActivity {
+public class MovieEditActivity extends AppCompatActivity {
 
     private ImageView moviePosterImageView;
-    private TextView movieTitleTextView, moviePlotTextView;
+    private TextView movieTitleTextView, moviePlotEditText;
     private Button favoriteButton;
+    private Button deleteButton;
     private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_details);
+        setContentView(R.layout.activity_movie_edit);
 
         //Bind views to variables
         moviePosterImageView = findViewById(R.id.moviePosterImageView);
         movieTitleTextView = findViewById(R.id.movieTitleTextView);
-        moviePlotTextView = findViewById(R.id.moviePlotTextView);
+        moviePlotEditText = findViewById(R.id.moviePlotEditText);
         backButton = findViewById(R.id.backButton);
 
         //Get the Movie object from the Intent
@@ -35,7 +36,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         if (movie != null) {
             //Set data to the views
             movieTitleTextView.setText(movie.getTitle());
-            moviePlotTextView.setText("Plot: " + movie.getPlot());
+            moviePlotEditText.setText("Plot: " + movie.getPlot());
 
             //Load the movie poster
             Glide.with(this).load(movie.getPoster()).into(moviePosterImageView);
