@@ -1,5 +1,6 @@
 package com.example.assignment3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText searchEditText;
     private Button searchButton;
+    private Button favoritesPageButton;
     private RecyclerView searchRecyclerView;
     private MovieAdapter movieAdapter;
     private Retrofit retrofit;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         //Bind views to variables
         searchEditText = findViewById(R.id.searchEditText);
         searchButton = findViewById(R.id.searchButton);
+        favoritesPageButton = findViewById(R.id.favoritesPageButton);
         searchRecyclerView = findViewById(R.id.searchRecyclerView);
 
         //Set up RecyclerView
@@ -58,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(MainActivity.this, "Please enter a search term", Toast.LENGTH_SHORT).show();
             }
+        });
+
+        //When clicked open favorites activity
+        favoritesPageButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, FavoritesActivity.class);
+            startActivity(intent);
         });
     }
 

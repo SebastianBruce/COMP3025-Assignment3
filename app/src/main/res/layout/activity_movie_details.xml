@@ -64,7 +64,7 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="348dp"
         android:backgroundTint="#491D90"
         android:text="Back to Search"
         android:textColor="#FFFFFF"
